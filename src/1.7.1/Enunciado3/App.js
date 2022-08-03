@@ -1,4 +1,3 @@
-import "./styles.css";
 import { filmes } from "./filmes";
 
 function FilmeCard() {
@@ -18,7 +17,7 @@ function FilmeCard() {
       }
       return (
         <div>
-          <p>Filmes sem Oscar (Injustiça)</p>
+          <p>Filmes sem Oscar (Injustiï¿½a)</p>
           <p>
             {filme.nome}
             <span role="img" aria-label="notCheck">

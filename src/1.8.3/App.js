@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.css';
 
 export default function App() {
   //https://www.auxiliadorapredial.com.br/alugar/residencial/rs+porto-alegre+cidade-baixa?quartos=2&sem-fiador-ou-garantias=true

@@ -1,4 +1,3 @@
-import "./styles.css";
 import { filmes } from "./filmes";
 
 function Filmes() {
