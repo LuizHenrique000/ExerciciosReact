@@ -1,5 +1,3 @@
-
-
 export default function App() {
   return (
     <div className="App">
@@ -8,58 +6,50 @@ export default function App() {
   );
 }
 
-const Personagens = () => {
+import * as React from 'react';
+import { useState } from 'react';
+
+export default function App() {
+  return (
+    <div className="App">
+      <Component />
+    </div>
+  );
+}
+
+const Component = () => {
   const personagens = [
-    "Jill Valentine",
-    "Claire Redfield",
-    "Ada Wong",
-    "Chris Redfield",
-    "Leon S. Kennedy",
-    "Albert Wesker"
+    'Jill Valentine',
+    'Jack Baker',
+    'Claire Redfield',
+    'Ada Wong',
+    'Chris Redfield',
+    'Leon S. Kennedy',
+    'Albert Wesker',
+    'Lucas Baker',
   ];
 
-  function buscarOsRedfield() {
-    return (
-      <div>
-        <ul>
-          {personagens
-            .filter((personagens) => personagens.includes("Redfield"))
-            .map((personagem) => (
-              <li>{personagem}</li>
-            ))}
-        </ul>
-      </div>
-    );
-  }
+  const [itensPersonagensParaExibir, set] = useState(personagens);
 
-  function buscarOsBaker() {
-    return (
-      <div>
-        <ul>
-          {personagens
-            .filter((personagens) => personagens.includes("Baker"))
-            .map((personagem) => (
-              <li>{personagem}</li>
-            ))}
-        </ul>
-      </div>
-    );
-  }
+  const apenasRedfield = personagens.filter((personagens) =>
+    personagens.includes('Redfield')
+  );
+
+  const apenasBaker = personagens.filter((personagens) =>
+    personagens.includes('Baker')
+  );
 
   return (
     <div>
       <h3>Personagens de Resident Evil</h3>
-      <button type="click" onClick={buscarOsRedfield}>
-        Redfield
-      </button>
-      <button type="click" onClick={buscarOsBaker}>
-        Baker
-      </button>
       <ul>
-        {personagens.map((personagem) => (
+        {itensPersonagensParaExibir.map((personagem) => (
           <li>{personagem}</li>
         ))}
       </ul>
+      <button onClick={() => set(apenasRedfield)}>Redfield</button>
+      <button onClick={() => set(apenasBaker)}>Baker</button>
+      <button onClick={() => set(personagens)}>Todos</button>
     </div>
   );
 };
